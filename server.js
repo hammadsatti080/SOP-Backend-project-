@@ -40,7 +40,9 @@ app.use(express.json());
 // Routes
 app.use("/api/reviews", require("./routes/reviewRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
-
+app.use("/api/auth", require("./routes/loginRoutes"));
+app.use("/api/students", require("./routes/studentRoutes"));
+app.use("/api/teachers", require("./routes/teachersRoutes"));
 // Connect MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
