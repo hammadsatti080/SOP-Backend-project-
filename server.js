@@ -43,6 +43,11 @@ app.use("/api/contact", require("./routes/contactRoutes"));
 app.use("/api/auth", require("./routes/loginRoutes"));
 app.use("/api/students", require("./routes/studentRoutes"));
 app.use("/api/teachers", require("./routes/teachersRoutes"));
+app.use("/api/courses", require("./routes/courseRoutes"));
+app.use("/api/classfees", require("./routes/classFeeRoutes"));
+app.use("/api/results", require("./routes/resultRoutes"));
+const enrollRouter = require("./routes/enrollRoutes");
+app.use("/api/enrollments", enrollRouter); // <-- this must match frontend URL
 // Connect MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
