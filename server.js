@@ -48,6 +48,9 @@ app.use("/api/classfees", require("./routes/classFeeRoutes"));
 app.use("/api/results", require("./routes/resultRoutes"));
 const enrollRouter = require("./routes/enrollRoutes");
 app.use("/api/enrollments", enrollRouter); // <-- this must match frontend URL
+app.use("/api/register", require("./routes/WebCourses/registrationRoutes"));
+
+
 // Connect MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
